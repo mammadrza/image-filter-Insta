@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+	<div>
+		<img id="imgtag" src="http://static.bigstockphoto.com/images/homepage/2016_popular_photo_categories.jpg" style="margin: auto; width:550px;  " alt="">
+	</div>
+
+	<input id="blur" type="range" min="0" max="10" value="0" onmousemove="">
+
+	<input id="brightnes" type="range" min="50" max="200" value="0" onmousemove="">
+
+	<input id="contras" type="range" min="100" max="500" value="0" onmousemove="">
+
+	<input id="inv" type="range" min="0" max="100" value="0" onmousemove="">
+
+ <!-- script -->
+	<script>
+
+		var range = document.getElementById("blur");
+		document.getElementById("blur").onmousemove=function (){
+			var blur=range.value;
+			document.getElementsByTagName("img")[0].style.WebkitFilter="blur("+blur+"px)"
+		}
+
+		var bright = document.getElementById("brightnes");
+		bright.onmousemove=function(){
+			var br = bright.value;
+			document.getElementsByTagName("img")[0].style.WebkitFilter="brightness("+br+"%)"
+		}
+
+		var cont = document.getElementById("contras");
+		cont.onmousemove=function(){
+			var c = cont.value;
+			document.getElementsByTagName("img")[0].style.WebkitFilter="contrast("+c+"%)"
+		}
+
+		var i = document.getElementById("inv");
+		i.onmousemove=function(){
+			var dr = i.value;
+			document.getElementsByTagName("img")[0].style.WebkitFilter="invert("+dr+"%)"
+		}
+
+
+	</script>
+
+</body>
+</html>
